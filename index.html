@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Our Services | PersonnalCybersecurityServices</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <style>
+    /* Reset and base from your original file */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+        Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      background-color: #0f111a;
+      color: #e0e6f3;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      scroll-behavior: smooth;
+    }
+
+    a {
+      color: #4fd1c5;
+      text-decoration: none;
+      transition: color 0.25s ease-in-out;
+      outline-offset: 2px;
+    }
+
+    a:hover,
+    a:focus {
+      color: #81e6d9;
+      outline: none;
+    }
+
+    h1, h2, h3, h4 {
+      margin-top: 0;
+      font-weight: 700;
+      line-height: 1.2;
+      color: #cbd5e1;
+    }
+
+    p {
+      margin-top: 0;
+      color: #a0aec0;
+    }
+
+    button, .btn {
+      font-family: inherit;
+      font-weight: 700;
+      font-size: 1rem;
+      color: white;
+      background: #4fd1c5;
+      border: none;
+      border-radius: 12px;
+      padding: 14px 32px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 4px 10px rgba(79, 209, 197, 0.4);
+      user-select: none;
+      display: inline-block;
+      text-align: center;
+    }
+    button:hover, .btn:hover,
+    button:focus, .btn:focus {
+      background: #38b2ac;
+      outline: none;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 14px rgba(56, 178, 172, 0.6);
+    }
+    button:active, .btn:active {
+      transform: translateY(0);
+      box-shadow: 0 3px 7px rgba(38, 137, 131, 0.5);
+    }
+    button:focus-visible, .btn:focus-visible {
+      outline: 3px solid #81e6d9;
+      outline-offset: 3px;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      width: 100%;
+    }
+
+    /* Header from your original file */
+    header {
+      position: sticky;
+      top: 0;
+      backdrop-filter: saturate(180%) blur(12px);
+      background-color: rgba(15, 17, 26, 0.9);
+      height: 64px;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #1a202c80;
+      z-index: 999;
+    }
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+    .logo {
+      font-size: clamp(1.5rem, 2vw, 2rem);
+      font-weight: 900;
+      color: #4fd1c5;
+      user-select: none;
+    }
+    nav {
+      display: flex;
+      gap: 24px;
+    }
+    nav a {
+      color: #4fd1c5;
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 8px 0;
+      position: relative;
+    }
+    nav a.active::after,
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0%;
+      height: 2px;
+      background: #4fd1c5;
+      transition: width 0.3s ease;
+      border-radius: 4px;
+    }
+    nav a.active::after,
+    nav a:hover::after,
+    nav a:focus::after {
+      width: 100%;
+    }
+
+    /* Hamburger & Mobile Nav from your original file */
+    .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; color: #4fd1c5; transition: color 0.3s ease; }
+    .hamburger:focus-visible { outline: 3px solid #81e6d9; outline-offset: 3px; }
+    .hamburger svg { width: 28px; height: 28px; fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+    .mobile-nav { position: fixed; top: 64px; left: 0; width: 280px; height: calc(100vh - 64px); background: rgba(15, 17, 26, 0.95); backdrop-filter: saturate(180%) blur(12px); box-shadow: 2px 0 12px rgba(0, 0, 0, 0.6); transform: translateX(-100%); transition: transform 0.3s ease-in-out; padding-top: 24px; display: flex; flex-direction: column; gap: 24px; z-index: 1000; }
+    .mobile-nav.open { transform: translateX(0); }
+    .mobile-nav a { padding: 12px 24px; font-size: 1.2rem; font-weight: 700; color: #4fd1c5; transition: background-color 0.25s ease; }
+    .mobile-nav a:hover, .mobile-nav a:focus { background-color: #274749; outline: none; }
+    .overlay { position: fixed; inset: 0; background: rgba(0, 0, 0, 0.5); opacity: 0; pointer-events: none; transition: opacity 0.3s ease; z-index: 900; }
+    .overlay.visible { opacity: 1; pointer-events: all; }
+
+    /* New styles for Service Page Content */
+    .page-hero {
+      padding: 80px 0 60px;
+      text-align: center;
+    }
+    .page-hero h1 {
+      font-size: clamp(2.5rem, 5vw, 3.8rem);
+      font-weight: 900;
+      color: #4fd1c5;
+      margin-bottom: 16px;
+      line-height: 1.1;
+    }
+    .page-hero p {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      max-width: 800px;
+      margin: 0 auto 30px auto;
+      color: #a0aec0;
+      line-height: 1.6;
+    }
+    
+    .section {
+        padding: 60px 0;
+        border-bottom: 1px solid #1a202c;
+    }
+    .section:last-of-type {
+        border-bottom: none;
+    }
+
+    .section-title {
+        text-align: center;
+        margin-bottom: 48px;
+        font-size: clamp(2rem, 4vw, 2.8rem);
+        color: #4fd1c5;
+        font-weight: 800;
+    }
+    
+    .service-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+
+    .service-card {
+        background: #121724;
+        padding: 2.25rem;
+        border-radius: 16px;
+        border: 1px solid #1a202c;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .service-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 30px rgba(79, 209, 197, 0.25);
+        border-color: #4fd1c5;
+    }
+    
+    .service-card h3 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #d9f8f5;
+        margin-bottom: 1rem;
+    }
+
+    .service-card ul {
+        list-style: none;
+        padding: 0;
+        margin-top: 1rem;
+        color: #a0aec0;
+    }
+        
+    .service-card li {
+        margin-bottom: 0.75rem;
+        padding-left: 1.5rem;
+        position: relative;
+    }
+
+    .service-card li::before {
+        content: '✓';
+        position: absolute;
+        left: 0;
+        color: #4fd1c5;
+        font-weight: bold;
+    }
+    
+    .cta-section {
+        background: #121724;
+        color: #fff;
+        text-align: center;
+        padding: 80px 0;
+    }
+
+    .cta-section h2 {
+        font-size: 2.2rem;
+        color: #4fd1c5;
+        margin-bottom: 1rem;
+    }
+
+    .cta-section p {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Footer from your original file */
+    footer { background: #0c111a; color: #718096; padding: 48px 24px 24px; margin-top: auto; border-top: 1px solid #1a202c; }
+    .footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 32px; }
+    .footer-section h4 { font-size: 1.125rem; font-weight: 700; color: #4fd1c5; margin-bottom: 16px; user-select: none; }
+    .footer-section ul { list-style: none; padding: 0; margin: 0; }
+    .footer-section ul li { margin-bottom: 12px; }
+    .footer-section ul li a { color: #718096; font-size: 0.95rem; transition: color 0.2s ease; }
+    .footer-section ul li a:hover, .footer-section ul li a:focus { color: #81e6d9; outline: none; }
+    .social-icons { display: flex; gap: 16px; }
+    .social-icons a { font-family: 'Material Icons'; font-size: 28px; color: #718096; transition: color 0.3s ease; text-decoration: none; user-select: none; }
+    .social-icons a:hover, .social-icons a:focus { color: #4fd1c5; outline: none; }
+
+    /* Responsive adjustments from your original file */
+    @media (max-width: 768px) {
+      nav { display: none; }
+      .hamburger { display: block; }
+      .page-hero { padding: 60px 16px 40px; }
+      .footer-container { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 480px) {
+      footer { padding: 40px 16px 16px; }
+      .footer-container { grid-template-columns: 1fr; gap: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header from your original file -->
+  <header role="banner">
+    <div class="header-inner container">
+      <a href="index.html" class="logo" aria-label="SecureNet home">P.C.S</a>
+      <nav role="navigation" aria-label="Primary Navigation">
+        <a href="index.html" tabindex="0">Home</a>
+        <a href="services.html" tabindex="0" class="active">Services</a>
+        <a href="#solutions" tabindex="0">Solutions</a>
+        <a href="https://pcs1s.github.io/about/" tabindex="0">About</a>
+        <a href="https://pcs1s.github.io/con/" tabindex="0">Contact</a>
+      </nav>
+      <button aria-controls="mobile-navigation" aria-expanded="false" class="hamburger" id="hamburger-button" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <line x1="3" y1="6" x2="21" y2="6" /><line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="18" x2="21" y2="18" />
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Nav from your original file -->
+  <nav id="mobile-navigation" class="mobile-nav" aria-label="Mobile Navigation" hidden>
+    <a href="index.html" tabindex="0">Home</a>
+    <a href="services.html" tabindex="0">Services</a>
+    <a href="#solutions" tabindex="0">Solutions</a>
+    <a href="https://pcs1s.github.io/about/" tabindex="0">About</a>
+    <a href="https://pcs1s.github.io/con/" tabindex="0">Contact</a>
+  </nav>
+  <div class="overlay" tabindex="-1" hidden></div>
+
+  <!-- MAIN CONTENT for the Services Page -->
+  <main role="main">
+    <section class="page-hero">
+        <div class="container">
+            <h1>Our Cybersecurity Services</h1>
+            <p>A proactive defense against evolving cyber threats is crucial for protecting your sensitive data, maintaining operational continuity, and preserving your hard-earned reputation. We offer a comprehensive suite of cybersecurity services designed to identify vulnerabilities, protect your assets, and respond effectively to security incidents.</p>
+        </div>
+    </section>
+
+    <section id="services" class="section">
+        <div class="container">
+            <h2 class="section-title">What We Offer</h2>
+            <div class="service-grid">
+                <article class="service-card">
+                    <h3>Cybersecurity Assessments & Testing</h3>
+                    <p>Understand your security weaknesses to build a strong defense. We provide a thorough evaluation of your current security posture, identifying vulnerabilities before they're exploited.</p>
+                    <ul>
+                        <li><strong>Vulnerability Assessment:</strong> Systematic reviews to identify, quantify, and prioritize security weaknesses across your entire IT infrastructure.</li>
+                        <li><strong>Penetration Testing (Pentesting):</strong> Authorized simulated cyberattacks that mimic real-world threat actors to uncover exploitable flaws.</li>
+                    </ul>
+                </article>
+                <article class="service-card">
+                    <h3>Managed Security Services</h3>
+                    <p>Enhance security without the overhead. We offer 24/7 monitoring and management of your security infrastructure from our high-availability Security Operation Centers (SOCs).</p>
+                    <ul>
+                        <li><strong>Managed Detection & Response (MDR):</strong> 24/7 expert monitoring, investigation, and response to augment your team and neutralize threats in real-time.</li>
+                        <li><strong>Proactive Management:</strong> We manage your firewalls, intrusion detection systems, VPNs, antivirus, and SIEM platforms.</li>
+                    </ul>
+                </article>
+                <article class="service-card">
+                    <h3>Incident Response & Forensics</h3>
+                    <p>When breaches occur, a swift, structured response is critical. We minimize damage, conduct deep forensic investigations, and ensure a speedy, secure recovery.</p>
+                    <ul>
+                        <li><strong>Rapid Threat Mitigation:</strong> Immediate action to contain threats and prevent further damage to your systems and data.</li>
+                        <li><strong>Recovery & Resilience:</strong> We eradicate threats, restore affected systems, and conduct post-incident reviews to strengthen future defenses.</li>
+                    </ul>
+                </article>
+                <article class="service-card">
+                    <h3>Consulting & Advisory</h3>
+                    <p>In a complex threat landscape, strategic guidance is invaluable. Our experts help you develop a robust and compliant security strategy tailored to your business.</p>
+                    <ul>
+                        <li><strong>Risk & Compliance:</strong> Understand your cyber risk profile and align security practices with standards like GDPR and HIPAA.</li>
+                        <li><strong>Security Awareness Training:</strong> Transform your workforce into a defensive asset by educating them on best practices and identifying threats like phishing.</li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Fortify Your Defenses?</h2>
+            <p>Let's work together to build a resilient security posture for your organization. Contact us today for a personalized consultation with our experts.</p>
+            <a href="https://pcs1s.github.io/con/" class="btn">Open a Case</a>
+        </div>
+    </section>
+  </main>
+
+  <!-- Footer from your original file -->
+  <footer role="contentinfo">
+    <div class="footer-container container">
+      <section class="footer-section" aria-labelledby="company-info-title">
+        <h4 id="company-info-title">Company</h4>
+        <ul>
+          <li><a href="https://pcs1s.github.io/about/">About Us</a></li>
+          <li><a href="https://pcs1s.github.io/ab/">Team</a></li>
+        </ul>
+      </section>
+
+      <section class="footer-section" aria-labelledby="support-title">
+        <h4 id="support-title">Support</h4>
+        <ul>
+          <li><a href="#help-center">Help Center</a></li>
+          <li><a href="https://pcs1s.github.io/con/">Contact Support</a></li>
+          <li><a href="https://pcs1s.github.io/tos/">Terms of Service</a></li>
+        </ul>
+      </section>
+
+      <section class="footer-section" aria-labelledby="legal-title">
+        <h4 id="legal-title">Legal</h4>
+        <ul>
+          <li><a href="https://pcs1s.github.io/tandc/">Terms & Conditions</a></li>
+          <li><a href="https://pcs1s.github.io/pop/">Privacy Policy</a></li>
+          <li><a href="https://pcs1s.github.io/cp/">Cookie Policy</a></li>
+          <li><a href="#security">Security</a></li>
+        </ul>
+      </section>
+
+      <section class="footer-section" aria-labelledby="social-title">
+        <h4 id="social-title">Follow Us</h4>
+        <div class="social-icons" role="list">
+          <a href="https://twitter.com" aria-label="Twitter" role="listitem" target="_blank" rel="noopener noreferrer">twitter</a>
+          <a href="https://linkedin.com" aria-label="LinkedIn" role="listitem" target="_blank" rel="noopener noreferrer">linkedin</a>
+          <a href="https://github.com" aria-label="GitHub" role="listitem" target="_blank" rel="noopener noreferrer">github</a>
+          <a href="https://facebook.com" aria-label="Facebook" role="listitem" target="_blank" rel="noopener noreferrer">facebook</a>
+        </div>
+      </section>
+    </div>
+  </footer>
+
+  <!-- Script for Mobile Nav from your original file -->
+  <script>
+    (function () {
+      const hamburgerBtn = document.getElementById('hamburger-button');
+      const mobileNav = document.getElementById('mobile-navigation');
+      const overlay = document.querySelector('.overlay');
+
+      function openMenu() {
+        mobileNav.hidden = false;
+        mobileNav.classList.add('open');
+        overlay.hidden = false;
+        overlay.classList.add('visible');
+        hamburgerBtn.setAttribute('aria-expanded', 'true');
+        hamburgerBtn.setAttribute('aria-label', 'Close menu');
+        mobileNav.querySelector('a').focus();
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeMenu() {
+        mobileNav.classList.remove('open');
+        overlay.classList.remove('visible');
+        hamburgerBtn.setAttribute('aria-expanded', 'false');
+        hamburgerBtn.setAttribute('aria-label', 'Open menu');
+        setTimeout(() => {
+          mobileNav.hidden = true;
+          overlay.hidden = true;
+          document.body.style.overflow = '';
+          hamburgerBtn.focus();
+        }, 300);
+      }
+
+      hamburgerBtn.addEventListener('click', () => {
+        if (mobileNav.classList.contains('open')) {
+          closeMenu();
+        } else {
+          openMenu();
+        }
+      });
+
+      overlay.addEventListener('click', closeMenu);
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && mobileNav.classList.contains('open')) {
+          e.preventDefault();
+          closeMenu();
+        }
+      });
+      
+      const navLinks = mobileNav.querySelectorAll('a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', closeMenu);
+      });
+    })();
+  </script>
+</body>
+</html>
